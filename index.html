@@ -1,0 +1,1086 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#250916">
+<meta name="description" content="A little universe dedicated to Felista Mwongeli Mutuku, and the unexpected story that began at Maseno University.">
+<title>Project Chichi ♡ Our Story</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --night:#200914;
+  --wine:#4b102a;
+  --rose:#b94e71;
+  --pink:#f2b8cb;
+  --cream:#fff8f0;
+  --gold:#e6c38b;
+  --muted:#d8bfc9;
+  --glass:rgba(255,244,247,.065);
+  --border:rgba(246,199,216,.19);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{
+  background:var(--night);
+  color:var(--cream);
+  font-family:'DM Sans',sans-serif;
+  overflow-x:hidden;
+  line-height:1.7;
+}
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--pink);color:var(--night)}
+
+#stars,#hearts{
+  position:fixed;inset:0;pointer-events:none;overflow:hidden;
+}
+#stars{z-index:-2}
+#hearts{z-index:8}
+.star{
+  position:absolute;width:2px;height:2px;background:#ffe9d5;
+  border-radius:50%;opacity:.5;animation:twinkle 3s infinite alternate;
+}
+@keyframes twinkle{to{opacity:.12;transform:scale(.4)}}
+.float-heart{
+  position:absolute;bottom:-35px;color:#f5b5cd;
+  animation:rise linear forwards;opacity:0;
+}
+@keyframes rise{
+  10%{opacity:.65}
+  100%{transform:translateY(-110vh) rotate(35deg);opacity:0}
+}
+.ambient{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(ellipse at 10% 10%,rgba(128,29,67,.26),transparent 38%),
+    radial-gradient(ellipse at 90% 45%,rgba(94,36,74,.18),transparent 42%),
+    radial-gradient(ellipse at 45% 100%,rgba(116,35,54,.2),transparent 45%);
+}
+.container{width:min(1080px,91%);margin:auto}
+.eyebrow{
+  text-transform:uppercase;letter-spacing:4px;font-size:.69rem;
+  color:var(--gold);font-weight:700;
+}
+h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif}
+h2{font-size:clamp(2.2rem,6vw,4rem);line-height:1.06;font-weight:500}
+h2 em,h1 em{color:var(--pink);font-weight:400}
+.section{padding:100px 0;position:relative}
+.section-head{text-align:center;max-width:720px;margin:0 auto 48px}
+.section-head p{color:var(--muted);margin-top:16px}
+.gold-line{
+  display:block;width:65px;height:1px;background:var(--gold);
+  margin:21px auto;
+}
+.btn{
+  border:1px solid var(--border);padding:13px 23px;border-radius:40px;
+  background:rgba(255,255,255,.05);color:var(--cream);
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  transition:.25s;letter-spacing:.3px;font-size:.85rem;
+}
+.btn:hover{transform:translateY(-3px);border-color:var(--gold);background:rgba(230,195,139,.12)}
+.btn-primary{
+  background:linear-gradient(120deg,#e8b4c6,#c76c8e);
+  color:#30101d;border:0;font-weight:700;
+}
+.btn-primary:hover{background:linear-gradient(120deg,#f7d5df,#e3a1b8)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+.nav{
+  position:sticky;top:0;z-index:20;
+  background:rgba(32,9,20,.88);backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.5rem;letter-spacing:1px}
+.brand span{color:var(--pink)}
+.nav-links{display:flex;align-items:center;gap:20px}
+.nav-links a{font-size:.76rem;color:var(--muted);transition:.2s}
+.nav-links a:hover{color:var(--gold)}
+.menu-btn{display:none;background:none;color:var(--cream);border:0;font-size:1.4rem}
+
+.hero{
+  min-height:calc(100svh - 70px);display:grid;place-items:center;
+  text-align:center;padding:90px 0 100px;position:relative;
+}
+.hero-inner{max-width:850px}
+.hero-seal{
+  width:94px;height:94px;margin:0 auto 30px;border:1px solid #a96c80;
+  border-radius:50%;display:grid;place-items:center;position:relative;
+  font-size:2.3rem;color:var(--pink);animation:sealGlow 4s ease-in-out infinite;
+}
+.hero-seal:before,.hero-seal:after{
+  content:"";position:absolute;border:1px solid rgba(230,195,139,.24);border-radius:50%;
+}
+.hero-seal:before{inset:-9px}
+.hero-seal:after{inset:-18px}
+@keyframes sealGlow{50%{box-shadow:0 0 45px #8b355244}}
+.hero h1{font-size:clamp(3.5rem,11vw,7.5rem);line-height:.94;font-weight:500;letter-spacing:-2px}
+.hero h1 .small-title{display:block;font-size:.39em;letter-spacing:5px;margin-bottom:23px;color:var(--gold);font-family:'DM Sans',sans-serif;font-weight:500}
+.hero-sub{max-width:590px;margin:27px auto;color:var(--muted);font-size:1rem}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-date{margin-top:36px;font-size:.75rem;letter-spacing:2px;color:#bd96a7}
+.scroll-cue{margin-top:55px;color:var(--gold);font-size:.72rem;letter-spacing:3px}
+.scroll-cue span{display:block;font-size:1.4rem;animation:bob 1.7s infinite}
+@keyframes bob{50%{transform:translateY(7px)}}
+
+.marquee{
+  overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  background:rgba(255,255,255,.025);padding:16px 0;white-space:nowrap;
+}
+.marquee-track{display:flex;width:max-content;animation:marquee 35s linear infinite}
+.marquee-track span{padding:0 27px;color:var(--pink);font-family:'Cormorant Garamond',serif;font-size:1.25rem}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+.paper-card{
+  border:1px solid var(--border);border-radius:23px;
+  background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.018));
+  box-shadow:0 20px 60px #00000015;
+}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:stretch}
+.intro-card{padding:30px}
+.intro-card .symbol{font-size:2rem;margin-bottom:17px}
+.intro-card h3{font-size:1.7rem;margin-bottom:10px}
+.intro-card p{color:var(--muted);font-size:.92rem}
+.quote{
+  padding:35px;border-left:2px solid var(--gold);background:rgba(230,195,139,.055);
+  border-radius:0 18px 18px 0;margin-top:24px;
+}
+.quote p{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-style:italic;line-height:1.4}
+.quote small{display:block;color:var(--gold);margin-top:15px}
+
+.counter-panel{text-align:center;padding:35px 20px;margin-top:24px}
+.counter-label{font-size:.7rem;letter-spacing:3px;color:var(--gold)}
+.counter-number{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,9vw,5rem);color:var(--pink);line-height:1.2}
+.counter-caption{color:var(--muted);font-size:.86rem}
+
+.timeline{max-width:790px;margin:auto;position:relative}
+.timeline:before{
+  content:"";position:absolute;top:10px;bottom:10px;left:18px;width:1px;
+  background:linear-gradient(var(--gold),#a64770,transparent);
+}
+.event{position:relative;padding:0 0 36px 58px}
+.event:last-child{padding-bottom:0}
+.event-dot{
+  position:absolute;left:9px;top:5px;width:19px;height:19px;
+  border:1px solid var(--gold);background:var(--night);border-radius:50%;
+  box-shadow:0 0 0 5px #e6c38b0c;
+}
+.event-card{padding:23px 25px;transition:.25s}
+.event-card:hover{border-color:#c88da4;transform:translateX(4px)}
+.event-date{font-size:.68rem;text-transform:uppercase;letter-spacing:2px;color:var(--gold)}
+.event h3{font-size:1.75rem;margin:5px 0 8px}
+.event p{color:var(--muted);font-size:.9rem}
+.event .tag{display:inline-block;margin-top:14px;padding:5px 10px;border-radius:30px;background:#d783a51a;color:var(--pink);font-size:.7rem}
+
+.letter-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.letter{
+  padding:26px 22px;min-height:220px;display:flex;flex-direction:column;
+  align-items:flex-start;position:relative;overflow:hidden;cursor:pointer;text-align:left;
+  color:var(--cream);width:100%;transition:.3s;
+}
+.letter:after{
+  content:"♡";position:absolute;right:-7px;bottom:-37px;font-size:7rem;
+  color:#e7b3c51b;font-family:'Cormorant Garamond',serif;pointer-events:none;
+}
+.letter:hover{transform:translateY(-6px);border-color:#c78ca4}
+.letter-icon{font-size:1.8rem;margin-bottom:18px}
+.letter h3{font-size:1.65rem;margin-bottom:8px}
+.letter p{font-size:.81rem;color:var(--muted)}
+.letter small{margin-top:auto;padding-top:18px;color:var(--gold);font-size:.72rem}
+
+.garden-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.flower{
+  min-height:170px;padding:25px 18px;text-align:center;cursor:pointer;
+  color:var(--cream);transition:.3s;
+}
+.flower:hover{transform:translateY(-5px);background:#a43e6518}
+.flower .bloom{font-size:2.5rem;display:block;margin-bottom:8px;transition:.35s}
+.flower:hover .bloom{transform:rotate(14deg) scale(1.12)}
+.flower h3{font-size:1.45rem}
+.flower p{font-size:.78rem;color:var(--muted);margin-top:5px}
+
+.mood-wrap{max-width:800px;margin:auto;padding:32px}
+.mood-buttons{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:25px 0}
+.mood-btn{border:1px solid var(--border);border-radius:40px;padding:11px 16px;background:var(--glass);color:var(--cream);font-size:.82rem}
+.mood-btn.active,.mood-btn:hover{background:#f0c0d1;color:#32111f;border-color:transparent}
+.mood-result{min-height:100px;text-align:center;display:grid;place-items:center;padding:15px}
+.mood-result p{font-family:'Cormorant Garamond',serif;font-size:1.65rem;color:var(--pink);max-width:570px}
+
+.quiz-card{max-width:700px;margin:auto;padding:34px;text-align:center}
+.quiz-card h3{font-size:2rem;margin:10px 0}
+.quiz-card p{color:var(--muted);margin:12px 0 23px}
+.quiz-input{
+  width:100%;max-width:300px;padding:13px 17px;border:1px solid var(--border);
+  border-radius:12px;background:#1c0913;color:var(--cream);margin-bottom:14px;
+}
+.feedback{min-height:30px;margin-top:13px;color:var(--pink);font-size:.87rem}
+.vault-reveal{display:none;margin-top:24px;padding:23px;border:1px solid #d6a5b8;border-radius:17px;background:#e5b7c30c}
+.vault-reveal.show{display:block;animation:fadeUp .5s}
+.vault-reveal h3{color:var(--gold);font-size:1.8rem}
+.vault-reveal p{color:var(--cream)}
+
+.final-section{text-align:center;padding:110px 0 120px}
+.final-card{max-width:780px;margin:auto;padding:clamp(27px,6vw,60px);position:relative;overflow:hidden}
+.final-card:before{
+  content:"";position:absolute;inset:12px;border:1px solid #e6c38b35;border-radius:17px;pointer-events:none;
+}
+.final-heart{font-size:3.4rem;animation:heartbeat 1.8s infinite}
+@keyframes heartbeat{50%{transform:scale(1.12)}}
+.final-card h2{margin:18px 0}
+.final-card p{color:var(--muted);max-width:570px;margin:15px auto}
+.signature{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.8rem;color:var(--pink);margin-top:24px}
+.footer{border-top:1px solid var(--border);padding:32px 0;text-align:center;color:#b99aa8;font-size:.75rem}
+.footer strong{color:var(--pink);font-family:'Cormorant Garamond',serif;font-size:1.1rem}
+.to-top{
+  position:fixed;right:17px;bottom:18px;width:43px;height:43px;border-radius:50%;
+  background:#f0c0d1;color:#2c1020;border:0;z-index:15;font-size:1.2rem;
+  opacity:0;pointer-events:none;transition:.3s;
+}
+.to-top.visible{opacity:1;pointer-events:auto}
+
+.modal{
+  position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:18px;
+  background:rgba(9,3,7,.82);backdrop-filter:blur(9px);
+}
+.modal.open{display:grid}
+.modal-box{
+  width:min(600px,100%);max-height:85svh;overflow-y:auto;padding:32px;
+  border:1px solid #c18a9f;border-radius:23px;
+  background:linear-gradient(145deg,#401226,#210914);
+  position:relative;animation:fadeUp .3s;
+}
+.modal-close{
+  position:absolute;right:17px;top:12px;background:none;border:0;
+  color:var(--cream);font-size:1.6rem;padding:4px 9px;
+}
+.modal-icon{font-size:2rem}
+.modal-box h3{font-size:2.25rem;color:var(--pink);margin:8px 0 17px;line-height:1.1}
+.modal-box p{color:#f0dce3;white-space:pre-line}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.reveal.in-view{opacity:1;transform:translateY(0)}
+.notice{font-size:.75rem;color:#c3a8b4;margin-top:18px}
+
+@media(max-width:760px){
+  .nav-links{
+    display:none;position:absolute;top:70px;left:0;right:0;padding:20px 5%;
+    flex-direction:column;align-items:stretch;gap:0;
+    background:#250b18;border-bottom:1px solid var(--border);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:11px 0;border-bottom:1px solid #ffffff0b;font-size:.85rem}
+  .menu-btn{display:block}
+  .intro-grid{grid-template-columns:1fr}
+  .letter-grid{grid-template-columns:repeat(2,1fr)}
+  .garden-grid{grid-template-columns:repeat(2,1fr)}
+  .section{padding:75px 0}
+  .hero{padding:70px 0}
+}
+@media(max-width:430px){
+  .letter-grid{grid-template-columns:1fr}
+  .letter{min-height:180px}
+  .garden-grid{gap:10px}
+  .flower{padding:20px 10px}
+  .hero h1{letter-spacing:-1px}
+  .modal-box{padding:28px 23px}
+  .mood-wrap,.quiz-card{padding:23px 16px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+
+<body>
+  
+<audio id="backgroundMusic" loop preload="auto">
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicToggle" type="button"
+  aria-label="Play background music"
+  style="position:fixed;right:17px;bottom:72px;z-index:30;
+  padding:12px 16px;border-radius:30px;
+  border:1px solid #e6c38b;background:#351021;
+  color:#fff8f0;font-size:13px;cursor:pointer;">
+  ♫ Play our song
+</button>
+
+<
+<audio id="backgroundMusic" loop preload="auto">
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicToggle" type="button"
+  aria-label="Play background music"
+  style="position:fixed;right:17px;bottom:72px;z-index:30;
+  padding:12px 16px;border-radius:30px;
+  border:1px solid #e6c38b;background:#351021;
+  color:#fff8f0;font-size:13px;cursor:pointer;">
+  ♫ Play our song
+</button>
+div class="ambient"></div>
+<div id="stars" aria-hidden="true"></div>
+
+<audio id="backgroundMusic" loop preload="auto">
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicToggle" type="button"
+  aria-label="Play background music"
+  style="position:fixed;right:17px;bottom:72px;z-index:30;
+  padding:12px 16px;border-radius:30px;
+  border:1px solid #e6c38b;background:#351021;
+  color:#fff8f0;font-size:13px;cursor:pointer;">
+  ♫ Play our song
+</button>
+<div id="hearts" aria-hidden="true"></div>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="brand">My <span>Chichi ♡</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#story">Our Story</a>
+      <a href="#letters">Letters</a>
+      <a href="#garden">Love Garden</a>
+      <a href="#mood">For Your Mood</a>
+      <a href="#vault">Surprise</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="container hero-inner">
+    <div class="hero-seal">♡</div>
+    <p class="eyebrow">A little universe made with love</p>
+    <h1><span class="small-title">DEAR</span>Felista.<br><em>~Chichi~</em></h1>
+    <span class="gold-line"></span>
+    <p class="hero-sub">
+      Some stories begin with a grand plan. Ours began in an admission queue,
+      with a name I wasn't expecting to remember—and a queen I wasn't expecting to meet.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#story">Discover our story <span>♡</span></a>
+      <a class="btn" href="#letters">Open a letter ✉</a>
+    </div>
+    <p class="hero-date">24 AUGUST 2026 · MASENO UNIVERSITY</p>
+    <div class="scroll-cue">SCROLL INTO OUR LITTLE WORLD <span>⌄</span></div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>One unexpected meeting ♡</span><span>One unforgettable queen ✧</span>
+    <span>A little courage ♡</span><span>A story still unfolding ✧</span>
+    <span>One unexpected meeting ♡</span><span>One unforgettable queen ✧</span>
+    <span>A little courage ♡</span><span>A story still unfolding ✧</span>
+  </div>
+</div>
+
+<main>
+<section class="section" id="beginning">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Chapter zero · The beginning</p>
+      <h2>Before there was <em>an us.</em></h2>
+      <span class="gold-line"></span>
+      <p>There was an ordinary university admission day, an unexpected encounter, and a name that stayed with me.</p>
+    </div>
+
+    <div class="intro-grid">
+      <article class="paper-card intro-card reveal">
+        <div class="symbol">🎓</div>
+        <p class="eyebrow">The setting</p>
+        <h3>Maseno University</h3>
+        <p>24 August 2026. I had joined the Bachelor of Pharmacy programme with IT. I was focused on beginning university life, completely unaware that the admission queue had something else in store for me.</p>
+      </article>
+      <article class="paper-card intro-card reveal">
+        <div class="symbol">👑</div>
+        <p class="eyebrow">The unexpected queen</p>
+        <h3>Then I saw her.</h3>
+        <p>A beautiful light-skinned girl was standing behind me, waiting for her turn. The admission lady called her name: Felista Mutuku. I noticed her beauty, and just like that, she stayed on my mind.</p>
+      </article>
+    </div>
+
+    <div class="quote reveal">
+      <p>“I went around telling my friends how I'd spotted a beautiful queen. Little did I know that the girl behind me in that queue would become such a memorable part of my university story.”</p>
+      <small>— From the boy in the admission queue ♡</small>
+    </div>
+
+    <div class="paper-card counter-panel reveal">
+      <p class="counter-label">SINCE OUR FIRST ENCOUNTER</p>
+      <div class="counter-number" id="daysCount">—</div>
+      <p class="counter-caption" id="counterCaption">Days since the day our story began.</p>
+      <p class="notice">Counting from 24 August 2026. The story is still being written.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="story">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">The chapters of us</p>
+      <h2>How a stranger became <em>my favourite plot twist.</em></h2>
+      <span class="gold-line"></span>
+      <p>Every little moment brought us here. Some were sweet, some were funny, and some were absolutely embarrassing. 😂</p>
+    </div>
+
+    <div class="timeline">
+      <article class="event reveal">
+        <span class="event-dot"></span>
+        <div class="paper-card event-card">
+          <p class="event-date">24 August 2026 · The first sight</p>
+          <h3>The admission queue 👑</h3>
+          <p>I saw a beautiful girl behind me at the BPharm admission desk. I heard her name and immediately had something to tell my friends: I'd spotted a queen. I didn't know her yet, but she had already caught my attention.</p>
+          <span class="tag">The beginning of everything</span>
+        </div>
+      </article>
+
+      <article class="event reveal">
+        <span class="event-dot"></span>
+        <div class="paper-card event-card">
+          <p class="event-date">First week · Orientation</p>
+          <h3>Eyes on the queen ✨</h3>
+          <p>During the first week of university orientation, my eyes kept finding her. While learning my way around university life, I was also quietly admiring the beauty that had caught my attention in the admission queue.</p>
+          <span class="tag">Secret admiration</span>
+        </div>
+      </article>
+
+      <article class="event reveal">
+        <span class="event-dot"></span>
+        <div class="paper-card event-card">
+          <p class="event-date">Second week · The plot twist</p>
+          <h3>Blocked before the story began 😂</h3>
+          <p>I finally got her number and texted her on WhatsApp. Unfortunately, my first approach involved vulgar language, and she blocked me. Romance? Not quite. A lesson in communication? Absolutely.</p>
+          <p style="margin-top:12px">I stayed blocked until the following Thursday, when fate—or perhaps the Maths timetable—put me in the seat beside her.</p>
+          <span class="tag">The WhatsApp incident</span>
+        </div>
+      </article>
+
+      <article class="event reveal">
+        <span class="event-dot"></span>
+        <div class="paper-card event-card">
+          <p class="event-date">The following Thursday · Maths class</p>
+          <h3>My second chance 💌</h3>
+          <p>After the short Maths lesson, I gathered enough courage to ask why she'd blocked me. She explained herself and unblocked me. We started chatting again, although not very much at first.</p>
+          <p style="margin-top:12px">And because I feared being blocked again, I mostly texted when I needed help with assignments. Yes, assignments. 😂</p>
+          <span class="tag">A very academic love strategy</span>
+        </div>
+      </article>
+
+      <article class="event reveal">
+        <span class="event-dot"></span>
+        <div class="paper-card event-card">
+          <p class="event-date">Third week · Another Thursday</p>
+          <h3>A conversation that mattered 🌷</h3>
+          <p>I spoke with her again while my friends were around. I didn't realise that this was also when she started becoming interested in me. I was trying not to bother her too much, so she became more familiar with my friends than with me.</p>
+          <span class="tag">Feelings quietly growing</span>
+        </div>
+      </article>
+
+      <article class="event reveal">
+        <span class="event-dot"></span>
+        <div class="paper-card event-card">
+          <p class="event-date">Fourth week · Saturday</p>
+          <h3>The church invitation ⛪</h3>
+          <p>She spent the day visiting my friend and later passed by my room to greet us. Then she invited me to church the following day. That night, we texted about church and preparing early.</p>
+          <p style="margin-top:12px">The next morning, we met and went to church together. Afterwards, she visited me in my room, with several friends around. Nothing particularly special happened—but our friendship felt easier afterwards.</p>
+          <span class="tag">Faith brought us closer</span>
+        </div>
+      </article>
+
+      <article class="event reveal">
+        <span class="event-dot"></span>
+        <div class="paper-card event-card">
+          <p class="event-date">The following weekend · Plans changed</p>
+          <h3>Pharmacy, messages & chemistry 🧪</h3>
+          <p>I tried to arrange another meeting, but she was going to World Pharmacists Day at Mount Kenya University. We kept chatting, and our conversations became more playful and personal.</p>
+          <p style="margin-top:12px">Then came Monday, when she invited me to visit her hostel. We spent time together, and our connection grew beyond the ordinary friendship we'd started with.</p>
+          <span class="tag">The chemistry was changing</span>
+        </div>
+      </article>
+
+      <article class="event reveal">
+        <span class="event-dot"></span>
+        <div class="paper-card event-card">
+          <p class="event-date">That Monday, Wednesday & beyond</p>
+          <h3>When friendship became something more ❤️</h3>
+          <p>Our visits continued, we grew more comfortable around each other, and our closeness deepened. By Wednesday, we'd shared another meaningful moment together. Thursday brought another visit, followed by a Friday sleepover that lasted until Saturday morning.</p>
+          <p style="margin-top:12px">And now there's one question I still can't answer with certainty: did we start dating on Monday or Wednesday? 😂</p>
+          <span class="tag">The Monday-or-Wednesday mystery</span>
+        </div>
+      </article>
+
+      <article class="event reveal">
+        <span class="event-dot"></span>
+        <div class="paper-card event-card">
+          <p class="event-date">Present day · Still unfolding</p>
+          <h3>The story is not finished 🌹</h3>
+          <p>From one admission queue to shared conversations, church, laughter, visits and growing affection—this is the story so far. The best part is that we don't have to know every chapter in advance to keep writing it.</p>
+          <span class="tag">To be continued…</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="letters">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Words I want you to keep</p>
+      <h2>Letters for <em>my queen.</em></h2>
+      <span class="gold-line"></span>
+      <p>Six little envelopes. Six different feelings. Tap any letter to open it.</p>
+    </div>
+    <div class="letter-grid" id="letterGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="garden">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">A garden made of memories</p>
+      <h2>Pick a flower, <em>discover a memory.</em></h2>
+      <span class="gold-line"></span>
+      <p>Each flower holds a little detail from our story—or a reminder of what makes it special.</p>
+    </div>
+    <div class="garden-grid" id="gardenGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="mood">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">For whatever kind of day it is</p>
+      <h2>A little note <em>for your heart.</em></h2>
+      <span class="gold-line"></span>
+      <p>Choose the mood that feels closest to yours. Let this little corner meet you there.</p>
+    </div>
+    <div class="paper-card mood-wrap reveal">
+      <div class="mood-buttons" id="moodButtons">
+        <button class="mood-btn" data-mood="happy">😊 Happy</button>
+        <button class="mood-btn" data-mood="sad">🌧️ Not okay</button>
+        <button class="mood-btn" data-mood="tired">🌙 Tired</button>
+        <button class="mood-btn" data-mood="stressed">📚 Stressed</button>
+        <button class="mood-btn" data-mood="missing">💌 Missing someone</button>
+        <button class="mood-btn" data-mood="playful">😜 Playful</button>
+      </div>
+      <div class="mood-result" aria-live="polite">
+        <p id="moodMessage">Choose a mood above. There's a little message waiting for you. ♡</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="vault">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">A little surprise awaits</p>
+      <h2>The <em>Chichi vault.</em></h2>
+      <span class="gold-line"></span>
+      <p>There is a final message behind this playful little door. Think of a word that belongs in our story.</p>
+    </div>
+    <div class="paper-card quiz-card reveal">
+      <div style="font-size:2.7rem">🔐</div>
+      <p class="eyebrow">One tiny challenge</p>
+      <h3>Can you open the vault?</h3>
+      <p>Try the nickname at the heart of this little universe.</p>
+      <form id="vaultForm">
+        <input class="quiz-input" id="vaultCode" type="password" placeholder="Enter the secret word…" autocomplete="off" aria-label="Secret word">
+        <br>
+        <button class="btn btn-primary" type="submit">Unlock the surprise ♡</button>
+      </form>
+      <p class="feedback" id="vaultFeedback" aria-live="polite"></p>
+      <div class="vault-reveal" id="vaultReveal">
+        <h3>You found it! 🌹</h3>
+        <p id="vaultMessage">Chichi, if this little website were a book, you would be the chapter I'd always want to revisit.</p>
+        <p style="margin-top:12px;color:var(--gold)">One admission queue. One unexpected queen. A story still being written.</p>
+        <a href="#final" class="btn" style="margin-top:20px">One last letter ✉</a>
+      </div>
+    </div>
+    <p class="notice" style="text-align:center">Playful surprise only—not a secure password system. This static website and its code are publicly viewable.</p>
+  </div>
+</section>
+
+<section class="final-section section" id="final">
+  <div class="container">
+    <div class="paper-card final-card reveal">
+      <div class="final-heart">💗</div>
+      <p class="eyebrow">The letter at the end of the universe</p>
+      <h2>To Felista, <em>my unexpected queen.</em></h2>
+      <span class="gold-line"></span>
+      <p>
+        If someone had told me on 24 August 2026 that a girl standing behind me
+        in an admission queue would become part of such a memorable story,
+        I probably would have laughed.
+      </p>
+      <p>
+        I didn't have a perfect beginning. I made mistakes, got blocked,
+        found courage in a Maths lesson, and sometimes used assignments as
+        an excuse to talk to you. 😂 But somehow, our story kept moving forward.
+      </p>
+      <p>
+        I treasure the moments that brought us closer, the laughter along the way,
+        and the memories still waiting to be made. Whatever the next chapter holds,
+        I'm glad our paths crossed at Maseno.
+      </p>
+      <p>
+        And as for whether it was Monday or Wednesday when our story became
+        something more… I suppose that mystery deserves its own anniversary debate. 😜
+      </p>
+      <p>Thank you for becoming part of my story, Chichi. May the chapters ahead bring us kindness, understanding, laughter and beautiful memories.</p>
+      <div class="signature">With affection, from the boy in the admission queue. ♡</div>
+      <button class="btn btn-primary" id="heartBurst" style="margin-top:28px">Send a little love into the universe ✨</button>
+      <p id="burstMessage" class="notice" aria-live="polite"></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <strong>Project Chichi ♡</strong>
+    <p>Made with care, a little humour, and one unforgettable story.</p>
+    <p style="margin-top:7px">24.08.2026 · The beginning of our chapter</p>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<div class="modal" id="memoryModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Close letter">×</button>
+    <div class="modal-icon" id="modalIcon">💌</div>
+    <p class="eyebrow" id="modalEyebrow">A letter for you</p>
+    <h3 id="modalTitle">Dear Chichi</h3>
+    <p id="modalBody"></p>
+    <button class="btn" id="modalDone" style="margin-top:24px">Keep this memory ♡</button>
+  </div>
+</div>
+
+<script>
+/* =====================================================
+   PROJECT CHICHI — PERSONALISATION AREA
+   Edit letters, flower messages and moods here.
+   ===================================================== */
+
+const letters = [
+  {
+    icon:"👑",
+    title:"The First Sight",
+    subtitle:"To the queen behind me",
+    body:`Dear Chichi,
+
+On 24 August 2026, I was at the BPharm admission desk at Maseno University when I noticed you standing behind me.
+
+Then I heard your name: Felista Mutuku. I didn't know your story, your favourite things, or the memories we'd eventually share. I only knew that you had caught my attention.
+
+I went around telling my friends that I'd spotted a beautiful queen. 😂
+
+If I could speak to the version of me standing in that queue, I'd tell him to pay attention. An ordinary admission day was about to become a very memorable chapter.
+
+Funny how some beginnings don't announce themselves. They simply happen.
+
+With affection,
+The boy in the queue ♡`
+  },
+  {
+    icon:"😂",
+    title:"The WhatsApp Incident",
+    subtitle:"An apology with a little humour",
+    body:`Dear Chichi,
+
+Let us respectfully acknowledge the first WhatsApp chapter. 😭😂
+
+I finally got your number, gathered my confidence and started chatting. Unfortunately, my opening approach wasn't exactly award-winning, and I ended up on your blocklist.
+
+I can't blame you for having boundaries. I can only admit that I had a lot to learn about approaching someone properly.
+
+Then came that Thursday Maths lesson. I found myself sitting beside you and finally asked why you'd blocked me. You explained, and I got a second chance.
+
+Lesson learned: confidence is good, but respect and good communication are better.
+
+Thank you for giving that conversation another chance. ♡`
+  },
+  {
+    icon:"📚",
+    title:"The Assignment Excuse",
+    subtitle:"My very academic strategy",
+    body:`Dear Chichi,
+
+I have a confession to make.
+
+After being blocked once, I was not eager to repeat the experience. So I played it safe. I would text you, but often only when I needed an assignment. 😂😂
+
+Imagine trying to build a connection while pretending your main interest was academic excellence!
+
+At least Pharmacy was helping me learn two things at once: my coursework and the art of having a conversation.
+
+Looking back, I laugh at how cautious I was. Sometimes the funniest part of a love story is remembering how hard we tried to act normal.
+
+The assignment excuse deserves a certificate of its own. 🎓♡`
+  },
+  {
+    icon:"⛪",
+    title:"That Sunday",
+    subtitle:"A little faith, a little courage",
+    body:`Dear Chichi,
+
+One of my favourite turning points was your invitation to church.
+
+After that Saturday visit, you asked me to go to church with you the next morning. Later that night, we chatted about church and preparing early.
+
+The following day, we met and went together. You later visited my room, although several friends were around, so it wasn't exactly a private romantic film scene. 😜
+
+Still, something important changed. I felt more comfortable talking to you, and our friendship began to flow more naturally.
+
+It was a simple Sunday, but simple moments can carry meaning we only understand later.
+
+I'm glad we shared it. ♡`
+  },
+  {
+    icon:"🌹",
+    title:"Monday or Wednesday?",
+    subtitle:"The mystery of our beginning",
+    body:`Dear Chichi,
+
+There is a very serious historical question that future generations may need to investigate.
+
+Did we start dating on Monday or Wednesday? 😂
+
+Monday brought an invitation, a visit and a change in our closeness. Wednesday brought another meaningful moment. In between were conversations, visits, and feelings that seemed to be growing faster than our official relationship status.
+
+I can remember the sequence of events, but the exact moment we crossed from friendship into something more still feels like a mystery.
+
+Perhaps we should compare notes one day and reach an official verdict.
+
+Until then, the case remains open.
+
+Suspect: two pharmacy students.
+Evidence: an admission queue, WhatsApp messages and questionable assignment strategies.
+Verdict: still under investigation. 😜♡`
+  },
+  {
+    icon:"💗",
+    title:"To My Queen",
+    subtitle:"A little note about you",
+    body:`Dear Felista,
+
+Our story didn't begin perfectly or according to a plan. It began unexpectedly, grew through conversations, and became meaningful through the time we chose to share.
+
+I appreciate the memories, the laughter, the little turning points and the way our story has developed.
+
+I hope that, wherever life takes us, we continue to treat each other with respect, communicate honestly and make room for kindness and joy.
+
+You are a memorable part of my Maseno chapter, and I'm glad I got to know the person behind the name I first heard at the admission desk.
+
+Here's to the moments we've shared and the memories still ahead.
+
+With affection,
+Eltone ♡`
+  }
+];
+
+const flowers = [
+  {icon:"🌷",title:"First Sight",desc:"The moment it began",body:"24 August 2026. One admission queue, one name called aloud, and one beautiful queen who caught my attention."},
+  {icon:"🌹",title:"The Queen",desc:"The girl I noticed",body:"I went to tell my friends about the beautiful queen I'd spotted. I didn't yet know how much more there was to discover about her."},
+  {icon:"🌸",title:"The Block",desc:"A memorable lesson",body:"Our first WhatsApp approach did not go as planned. I learned that a good connection begins with respect, thoughtful words and listening."},
+  {icon:"🌻",title:"Assignments",desc:"The academic excuse",body:"I was so cautious about being blocked again that assignments became my safest excuse to text. Pharmacy was clearly teaching me extra units. 😂"},
+  {icon:"🪻",title:"That Sunday",desc:"A shared moment",body:"An invitation to church, an early start, and a day that made talking to each other feel more natural."},
+  {icon:"💐",title:"The Next Chapter",desc:"Still being written",body:"Our story doesn't have to be perfect to be meaningful. There's room for more laughter, better communication and beautiful new memories."}
+];
+
+const moods = {
+  happy:"Keep that beautiful smile. May today's happiness give you a memory worth smiling about again tomorrow. 🌷",
+  sad:"You don't have to pretend every day is easy. Be gentle with yourself, take things one step at a time, and remember that a difficult day doesn't define your whole story. 💗",
+  tired:"Rest is not a failure. Put down what can wait, take a breath, and give yourself permission to recharge. Even queens need their quiet moments. 👑",
+  stressed:"One thing at a time. You don't need to solve the whole week in one afternoon. Breathe, make a small plan, and tackle the next step. 📚",
+  missing:"Some people make ordinary moments feel special, and remembering those moments can bring a smile even from far away. Sending a little warmth your way. 💌",
+  playful:"Breaking news: the girl who once blocked a certain pharmacy student is now the star of an entire website. The assignment excuse is still under investigation. 😂😜"
+};
+
+/* Create letter cards */
+const letterGrid = document.getElementById("letterGrid");
+
+letters.forEach((letter,index)=>{
+  const button=document.createElement("button");
+  button.className="paper-card letter reveal";
+  button.type="button";
+  button.innerHTML=`
+    <span class="letter-icon">${letter.icon}</span>
+    <h3>${letter.title}</h3>
+    <p>${letter.subtitle}</p>
+    <small>OPEN LETTER ↗</small>`;
+  button.addEventListener("click",()=>openModal(letter));
+  letterGrid.appendChild(button);
+});
+
+/* Create flower cards */
+const gardenGrid = document.getElementById("gardenGrid");
+
+flowers.forEach(flower=>{
+  const button=document.createElement("button");
+  button.className="paper-card flower reveal";
+  button.type="button";
+  button.innerHTML=`
+    <span class="bloom">${flower.icon}</span>
+    <h3>${flower.title}</h3>
+    <p>${flower.desc}</p>`;
+  button.addEventListener("click",()=>openModal({
+    icon:flower.icon,
+    title:flower.title,
+    subtitle:flower.desc,
+    body:flower.body
+  }));
+  gardenGrid.appendChild(button);
+});
+
+/* Modal letters */
+const modal=document.getElementById("memoryModal");
+const modalTitle=document.getElementById("modalTitle");
+const modalBody=document.getElementById("modalBody");
+const modalIcon=document.getElementById("modalIcon");
+const modalEyebrow=document.getElementById("modalEyebrow");
+let previousFocus=null;
+
+function openModal(item){
+  previousFocus=document.activeElement;
+  modalIcon.textContent=item.icon||"💌";
+  modalTitle.textContent=item.title;
+  modalEyebrow.textContent=item.subtitle||"A little memory for you";
+  modalBody.textContent=item.body;
+  modal.classList.add("open");
+  document.body.style.overflow="hidden";
+  document.getElementById("modalClose").focus();
+}
+
+function closeModal(){
+  modal.classList.remove("open");
+  document.body.style.overflow="";
+  if(previousFocus) previousFocus.focus();
+}
+document.getElementById("modalClose").addEventListener("click",closeModal);
+document.getElementById("modalDone").addEventListener("click",closeModal);
+modal.addEventListener("click",e=>{if(e.target===modal)closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+
+/* Mood messages */
+const moodButtons=document.querySelectorAll(".mood-btn");
+const moodMessage=document.getElementById("moodMessage");
+
+moodButtons.forEach(button=>{
+  button.addEventListener("click",()=>{
+    moodButtons.forEach(b=>b.classList.remove("active"));
+    button.classList.add("active");
+    moodMessage.textContent=moods[button.dataset.mood];
+    moodMessage.animate(
+      [{opacity:0,transform:"translateY(8px)"},{opacity:1,transform:"translateY(0)"}],
+      {duration:350}
+    );
+  });
+});
+
+/* The playful vault. This is not real security. */
+document.getElementById("vaultForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const entered=document.getElementById("vaultCode").value.trim().toLowerCase();
+  const feedback=document.getElementById("vaultFeedback");
+  const reveal=document.getElementById("vaultReveal");
+
+  if(entered==="chichi"){
+    feedback.textContent="The door is opening… ♡";
+    reveal.classList.add("show");
+    document.getElementById("vaultMessage").textContent=
+      "Chichi, if this little website were a book, you would be a chapter I'd always want to revisit. From the admission queue to all the memories that followed, I'm glad our paths crossed. ♡";
+    reveal.scrollIntoView({behavior:"smooth",block:"center"});
+  }else{
+    feedback.textContent="Not quite! Try the nickname at the heart of this website. 💗";
+    reveal.classList.remove("show");
+  }
+});
+
+/* Counter from first meeting date */
+function updateCounter(){
+  const start=new Date("2026-08-24T00:00:00");
+  const now=new Date();
+  const days=Math.floor((now-start)/(1000*60*60*24));
+  const number=document.getElementById("daysCount");
+  const caption=document.getElementById("counterCaption");
+
+  if(days<0){
+    number.textContent="Soon ♡";
+    caption.textContent="Our story's chosen date is still ahead.";
+  }else{
+    number.textContent=days.toLocaleString();
+    caption.textContent=days===0
+      ?"Today marks the beginning of this story."
+      :"Days since the day our story began.";
+  }
+}
+updateCounter();
+
+/* Starry background */
+const stars=document.getElementById("stars");
+for(let i=0;i<85;i++){
+  const star=document.createElement("span");
+  star.className="star";
+  star.style.left=Math.random()*100+"%";
+  star.style.top=Math.random()*100+"%";
+  star.style.animationDelay=Math.random()*4+"s";
+  star.style.animationDuration=(2+Math.random()*4)+"s";
+  stars.appendChild(star);
+}
+
+/* Floating hearts */
+const heartLayer=document.getElementById("hearts");
+let heartTimer=null;
+
+function makeHeart(){
+  if(document.hidden)return;
+  const heart=document.createElement("span");
+  heart.className="float-heart";
+  heart.textContent=["♡","♥","✧","ღ"][Math.floor(Math.random()*4)];
+  heart.style.left=Math.random()*100+"%";
+  heart.style.fontSize=(12+Math.random()*19)+"px";
+  const duration=8+Math.random()*7;
+  heart.style.animationDuration=duration+"s";
+  heartLayer.appendChild(heart);
+  setTimeout(()=>heart.remove(),duration*1000+500);
+}
+function startHearts(){
+  if(!heartTimer)heartTimer=setInterval(makeHeart,1300);
+}
+function stopHearts(){
+  clearInterval(heartTimer);
+  heartTimer=null;
+}
+startHearts();
+document.addEventListener("visibilitychange",()=>{
+  if(document.hidden)stopHearts();else startHearts();
+});
+
+/* Scroll reveal */
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("in-view");
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.08});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+/* Mobile navigation */
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+
+menuBtn.addEventListener("click",()=>{
+  const opened=navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded",String(opened));
+  menuBtn.textContent=opened?"×":"☰";
+});
+navLinks.querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded","false");
+    menuBtn.textContent="☰";
+  });
+});
+
+/* Back to top */
+const toTop=document.getElementById("toTop");
+window.addEventListener("scroll",()=>{
+  toTop.classList.toggle("visible",window.scrollY>550);
+},{passive:true});
+toTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+
+/* Final heart celebration */
+document.getElementById("heartBurst").addEventListener("click",()=>{
+  for(let i=0;i<28;i++){
+    setTimeout(makeHeart,i*65);
+  }
+  document.getElementById("burstMessage").textContent=
+    "A little love sent into the universe. May the story keep unfolding beautifully. ♡";
+});
+  
+const backgroundMusic = document.getElementById("backgroundMusic");
+const musicToggle = document.getElementById("musicToggle");
+
+backgroundMusic.volume = 0.22;
+
+let musicStarted = false;
+
+async function startOurSong() {
+  if (musicStarted) return;
+
+  try {
+    await backgroundMusic.play();
+    musicStarted = true;
+
+    musicToggle.textContent = "♫ Pause our song";
+    musicToggle.setAttribute(
+      "aria-label",
+      "Pause background music"
+    );
+  } catch (error) {
+    // Autoplay may be blocked.
+    // Wait for another user interaction.
+  }
+}
+
+// 1. Try playing immediately when the page loads.
+startOurSong();
+
+// 2. If autoplay is blocked, start on the first interaction.
+document.addEventListener("pointerdown", startOurSong, {
+  once: true
+});
+
+document.addEventListener("scroll", startOurSong, {
+  once: true,
+  passive: true
+});
+
+document.addEventListener("keydown", startOurSong, {
+  once: true
+});
+
+// 3. Keep the music button working.
+musicToggle.addEventListener("click", async (event) => {
+  event.stopPropagation();
+
+  if (backgroundMusic.paused) {
+    try {
+      await backgroundMusic.play();
+      musicStarted = true;
+      musicToggle.textContent = "♫ Pause our song";
+    } catch (error) {
+      musicToggle.textContent = "♫ Tap to play our song";
+    }
+  } else {
+    backgroundMusic.pause();
+    musicToggle.textContent = "♫ Play our song";
+    musicStarted = false;
+  }
+});
+
+// Keep the button label in sync with playback.
+backgroundMusic.addEventListener("play", () => {
+  musicToggle.textContent = "♫ Pause our song";
+});
+
+backgroundMusic.addEventListener("pause", () => {
+  musicToggle.textContent = "♫ Play our song";
+});
+
+</script>
+</body>
+</html>
+
