@@ -311,8 +311,35 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
   color:#fff8f0;font-size:13px;cursor:pointer;">
   ♫ Play our song
 </button>
-  <div id="stars" aria-hidden="true"></div>
 
+<
+<audio id="backgroundMusic" loop preload="auto">
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicToggle" type="button"
+  aria-label="Play background music"
+  style="position:fixed;right:17px;bottom:72px;z-index:30;
+  padding:12px 16px;border-radius:30px;
+  border:1px solid #e6c38b;background:#351021;
+  color:#fff8f0;font-size:13px;cursor:pointer;">
+  ♫ Play our song
+</button>
+div class="ambient"></div>
+<div id="stars" aria-hidden="true"></div>
+
+<audio id="backgroundMusic" loop preload="auto">
+  <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<button id="musicToggle" type="button"
+  aria-label="Play background music"
+  style="position:fixed;right:17px;bottom:72px;z-index:30;
+  padding:12px 16px;border-radius:30px;
+  border:1px solid #e6c38b;background:#351021;
+  color:#fff8f0;font-size:13px;cursor:pointer;">
+  ♫ Play our song
+</button>
 <div id="hearts" aria-hidden="true"></div>
 
 <nav class="nav">
@@ -983,43 +1010,38 @@ document.getElementById("heartBurst").addEventListener("click",()=>{
     "A little love sent into the universe. May the story keep unfolding beautifully. ♡";
 });
   
-
 const backgroundMusic = document.getElementById("backgroundMusic");
 const musicToggle = document.getElementById("musicToggle");
 
 backgroundMusic.volume = 0.22;
 
-function syncMusicButton() {
-  musicToggle.textContent = backgroundMusic.paused
-    ? "♫ Play our song"
-    : "♫ Pause our song";
-
-  musicToggle.setAttribute(
-    "aria-label",
-    backgroundMusic.paused
-      ? "Play background music"
-      : "Pause background music"
-  );
-}
+let musicStarted = false;
 
 async function startOurSong() {
-  if (!backgroundMusic.paused) return;
+  if (musicStarted) return;
 
   try {
     await backgroundMusic.play();
-    syncMusicButton();
+    musicStarted = true;
+
+    musicToggle.textContent = "♫ Pause our song";
+    musicToggle.setAttribute(
+      "aria-label",
+      "Pause background music"
+    );
   } catch (error) {
-    musicToggle.textContent = "♫ Tap to play our song";
+    // Autoplay may be blocked.
+    // Wait for another user interaction.
   }
 }
 
-// Try autoplay; browsers may block it until interaction.
+// 1. Try playing immediately when the page loads.
 startOurSong();
 
-document.addEventListener("pointerdown", (event) => {
-  if (event.target.closest("#musicToggle")) return;
-  startOurSong();
-}, { once: true });
+// 2. If autoplay is blocked, start on the first interaction.
+document.addEventListener("pointerdown", startOurSong, {
+  once: true
+});
 
 document.addEventListener("scroll", startOurSong, {
   once: true,
@@ -1030,26 +1052,33 @@ document.addEventListener("keydown", startOurSong, {
   once: true
 });
 
+// 3. Keep the music button working.
 musicToggle.addEventListener("click", async (event) => {
   event.stopPropagation();
 
   if (backgroundMusic.paused) {
     try {
       await backgroundMusic.play();
+      musicStarted = true;
+      musicToggle.textContent = "♫ Pause our song";
     } catch (error) {
       musicToggle.textContent = "♫ Tap to play our song";
-      return;
     }
   } else {
     backgroundMusic.pause();
+    musicToggle.textContent = "♫ Play our song";
+    musicStarted = false;
   }
-
-  syncMusicButton();
 });
 
-backgroundMusic.addEventListener("play", syncMusicButton);
-backgroundMusic.addEventListener("pause", syncMusicButton);
+// Keep the button label in sync with playback.
+backgroundMusic.addEventListener("play", () => {
+  musicToggle.textContent = "♫ Pause our song";
+});
 
+backgroundMusic.addEventListener("pause", () => {
+  musicToggle.textContent = "♫ Play our song";
+});
 
 </script>
 </body>
