@@ -311,6 +311,7 @@ button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(-
   color:#fff8f0;font-size:13px;cursor:pointer;">
   ♫ Play our song
 </button>
+  <div id="stars" aria-hidden="true"></div>
 
 <div id="hearts" aria-hidden="true"></div>
 
@@ -982,38 +983,43 @@ document.getElementById("heartBurst").addEventListener("click",()=>{
     "A little love sent into the universe. May the story keep unfolding beautifully. ♡";
 });
   
+
 const backgroundMusic = document.getElementById("backgroundMusic");
 const musicToggle = document.getElementById("musicToggle");
 
 backgroundMusic.volume = 0.22;
 
-let musicStarted = false;
+function syncMusicButton() {
+  musicToggle.textContent = backgroundMusic.paused
+    ? "♫ Play our song"
+    : "♫ Pause our song";
+
+  musicToggle.setAttribute(
+    "aria-label",
+    backgroundMusic.paused
+      ? "Play background music"
+      : "Pause background music"
+  );
+}
 
 async function startOurSong() {
-  if (musicStarted) return;
+  if (!backgroundMusic.paused) return;
 
   try {
     await backgroundMusic.play();
-    musicStarted = true;
-
-    musicToggle.textContent = "♫ Pause our song";
-    musicToggle.setAttribute(
-      "aria-label",
-      "Pause background music"
-    );
+    syncMusicButton();
   } catch (error) {
-    // Autoplay may be blocked.
-    // Wait for another user interaction.
+    musicToggle.textContent = "♫ Tap to play our song";
   }
 }
 
-// 1. Try playing immediately when the page loads.
+// Try autoplay; browsers may block it until interaction.
 startOurSong();
 
-// 2. If autoplay is blocked, start on the first interaction.
-document.addEventListener("pointerdown", startOurSong, {
-  once: true
-});
+document.addEventListener("pointerdown", (event) => {
+  if (event.target.closest("#musicToggle")) return;
+  startOurSong();
+}, { once: true });
 
 document.addEventListener("scroll", startOurSong, {
   once: true,
@@ -1024,33 +1030,26 @@ document.addEventListener("keydown", startOurSong, {
   once: true
 });
 
-// 3. Keep the music button working.
 musicToggle.addEventListener("click", async (event) => {
   event.stopPropagation();
 
   if (backgroundMusic.paused) {
     try {
       await backgroundMusic.play();
-      musicStarted = true;
-      musicToggle.textContent = "♫ Pause our song";
     } catch (error) {
       musicToggle.textContent = "♫ Tap to play our song";
+      return;
     }
   } else {
     backgroundMusic.pause();
-    musicToggle.textContent = "♫ Play our song";
-    musicStarted = false;
   }
+
+  syncMusicButton();
 });
 
-// Keep the button label in sync with playback.
-backgroundMusic.addEventListener("play", () => {
-  musicToggle.textContent = "♫ Pause our song";
-});
+backgroundMusic.addEventListener("play", syncMusicButton);
+backgroundMusic.addEventListener("pause", syncMusicButton);
 
-backgroundMusic.addEventListener("pause", () => {
-  musicToggle.textContent = "♫ Play our song";
-});
 
 </script>
 </body>
